@@ -2,18 +2,19 @@ import "package:capp/components/my_button.dart";
 import "package:capp/components/my_textfield.dart";
 import "package:flutter/material.dart";
 
-class LoginPage extends StatelessWidget {
+class RegisterPage extends StatelessWidget {
 
+  
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _confirmPasswordController = TextEditingController();
+
+  void register() {
+  }
 
   final void Function()? onTap;
 
-  void login() {
-
-  }
-
-  LoginPage({super.key, required this.onTap});
+  RegisterPage({super.key, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +31,7 @@ class LoginPage extends StatelessWidget {
 
           const SizedBox(height: 50), 
 
-          Text("Welcome Back, you have been missed!",
+          Text("Lets create an account!",
           style: TextStyle(
                   color: Theme.of(context).colorScheme.primary,
                   fontSize: 16,
@@ -53,10 +54,18 @@ class LoginPage extends StatelessWidget {
           ),
 
           const SizedBox(height: 15),
+
+          MyTextField(
+            hintText: "Confirm Password",
+            obscureText: true,
+            controller: _confirmPasswordController,
+          ),
+
+          const SizedBox(height: 15),
         
           MyButton(
-            text: "Login", 
-            onTap: login,
+            text: "Register", 
+            onTap: register,
           ),
 
           const SizedBox(height: 25), 
@@ -64,14 +73,14 @@ class LoginPage extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("Not a member?",
+              Text("Already have an account?",
                 style: TextStyle(
                   color: Theme.of(context).colorScheme.primary,
                 )
               ),
               GestureDetector(
-                onTap: onTap, 
-                child: Text("Register now", 
+                onTap: onTap,
+                child: Text("Login now", 
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Theme.of(context).colorScheme.primary),
