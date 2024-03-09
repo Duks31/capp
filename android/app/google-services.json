@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "314143361685",
+    "project_id": "capp-2efb0",
+    "storage_bucket": "capp-2efb0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:314143361685:android:f9bc125d7b313f91bb699c",
+        "android_client_info": {
+          "package_name": "com.example.capp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpF2rYobp3wuUrreLIyzoyluq1tK_36zQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

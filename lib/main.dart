@@ -1,10 +1,13 @@
+import "package:capp/firebase_options.dart";
 import "package:capp/themes/light_mode.dart";
+import "package:firebase_core/firebase_core.dart";
 import "package:flutter/material.dart";
-import "pages/login.dart";
-import "package:capp/themes/light_mode.dart";
 import "package:capp/auth/login_or_register.dart";
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
   runApp(const MyApp());
 
 }
