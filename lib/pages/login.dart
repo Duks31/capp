@@ -1,3 +1,4 @@
+import "package:capp/auth/auth_service.dart";
 import "package:capp/components/my_button.dart";
 import "package:capp/components/my_textfield.dart";
 import "package:flutter/material.dart";
@@ -9,10 +10,28 @@ class LoginPage extends StatelessWidget {
 
   final void Function()? onTap;
 
-  void login() {
+  Future<void> login(BuildContext context) async {
+    //auth service
 
+    final authservice = AuthService();
+
+    // try login
+    try {
+      await authservice.signInWithEmailAndPassword(
+        _emailController.text, 
+        _passwordController.text
+      );
+    }
+
+    // catch any errors
+    catch (e) {
+      // ignore: use_build_context_synchronously
+      showDialog(context: context, builder: (context) => AlertDialog(
+        title: Text(e.toString()),
+      ),);
+    }
   }
-
+  
   LoginPage({super.key, required this.onTap});
 
   @override
@@ -56,7 +75,7 @@ class LoginPage extends StatelessWidget {
         
           MyButton(
             text: "Login", 
-            onTap: login,
+            onTap: () => login(context),
           ),
 
           const SizedBox(height: 25), 

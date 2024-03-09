@@ -1,15 +1,33 @@
+import "package:capp/auth/auth_service.dart";
 import "package:capp/components/my_button.dart";
 import "package:capp/components/my_textfield.dart";
 import "package:flutter/material.dart";
 
 class RegisterPage extends StatelessWidget {
 
-  
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _confirmPasswordController = TextEditingController();
 
-  void register() {
+  void register(BuildContext context) {
+    final _auth = AuthService();
+
+    // password match create user
+    if (_passwordController.text == _confirmPasswordController.text) {
+      try {
+        _auth.signUpWithEmailAndPassword(_emailController.text, _passwordController.text);
+      } catch (e) {
+        showDialog(context: context, builder: (context) => AlertDialog(
+        title: Text(e.toString()),
+      ),);
+      }
+    }
+    else {
+      showDialog(context: context, builder: (context) => const AlertDialog(
+        title: Text("Password don't match"),
+        ),
+      );
+    }
   }
 
   final void Function()? onTap;
@@ -29,7 +47,7 @@ class RegisterPage extends StatelessWidget {
             color: Theme.of(context).colorScheme.primary, 
           ),
 
-          const SizedBox(height: 50), 
+          const SizedBox(height: 20), 
 
           Text("Lets create an account!",
           style: TextStyle(
@@ -65,7 +83,7 @@ class RegisterPage extends StatelessWidget {
         
           MyButton(
             text: "Register", 
-            onTap: register,
+            onTap: () => register(context),
           ),
 
           const SizedBox(height: 25), 
