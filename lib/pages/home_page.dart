@@ -1,16 +1,71 @@
 import "package:capp/components/my_drawer.dart";
+import "package:capp/components/user_tile.dart";
+import "package:capp/pages/chat_page.dart";
+import "package:capp/services/auth/auth_service.dart";
+import "package:capp/services/chat/chat_service.dart";
 import "package:flutter/material.dart";
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  HomePage({super.key});
+
+  final ChatService _chatService = ChatService();
+  final AuthService _authService = AuthService();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Home Page"),
+        title: const Text("Home"),
+        
       ),
-      drawer: MyDrawer(),
+      drawer: const MyDrawer(),
+      body: _buildUserList(),
     );
+  }
+
+  Widget _buildUserList() {
+    return StreamBuilder(
+        stream: _chatService.getUsersStream(),
+        builder: (context, snapshot) {
+          // error
+          if (snapshot.hasError) {
+            return const Text("Error");
+          }
+
+          // loading...
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Text("Loading...");
+          }
+
+          // return list view
+          return ListView(
+            children: snapshot.data!
+                .map<Widget>((userData) => _buildUserListItem(userData, context))
+                .toList(),
+          );
+        });
+  }
+
+  // build individual list tile for user
+  Widget _buildUserListItem(
+      Map<String, dynamic> userData, BuildContext context) {
+    if (userData["email"] != _authService.getCurrentUser()!.email) {
+      return UserTile(
+      text: userData["email"],
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => Chatpage(
+              receiverEmail: userData["email"],
+              receiverID: userData["uid"],
+            ),
+          ),
+        );
+      },
+    );
+    } else {
+      return Container();
+    }
   }
 }

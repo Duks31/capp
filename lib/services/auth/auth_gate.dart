@@ -1,4 +1,4 @@
-import "package:capp/auth/login_or_register.dart";
+import 'package:capp/services/auth/login_or_register.dart';
 import "package:firebase_auth/firebase_auth.dart";
 import "package:flutter/material.dart";
 import "package:capp/pages/home_page.dart";
@@ -14,7 +14,7 @@ class AuthGate extends StatelessWidget {
 
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return const HomePage();
+            return HomePage();
           }
 
           else {

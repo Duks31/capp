@@ -1,4 +1,4 @@
-import "package:capp/auth/auth_service.dart";
+import 'package:capp/services/auth/auth_service.dart';
 import "package:flutter/material.dart";
 import "package:capp/pages/settings.dart";
 
