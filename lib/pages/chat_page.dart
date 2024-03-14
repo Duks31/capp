@@ -49,7 +49,7 @@ class _ChatpageState extends State<Chatpage> {
       const Duration(
         milliseconds: 500
       ), () => scrollDown(),
-    )
+    );
   }
 
   @override
