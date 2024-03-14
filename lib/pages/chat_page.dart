@@ -28,7 +28,6 @@ class _ChatpageState extends State<Chatpage> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
 
     //add listener to focus node
@@ -77,7 +76,6 @@ class _ChatpageState extends State<Chatpage> {
       // clear the text field
       _messageController.clear();
     }
-
     sendMessage();
   }
 
