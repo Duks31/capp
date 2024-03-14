@@ -28,8 +28,8 @@ class MyDrawer extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 25.0),
             child: ListTile(
-              title: Text("HOME"),
-              leading: Icon(Icons.home),
+              title: const Text("HOME"),
+              leading: const Icon(Icons.home),
               onTap: () {
                 Navigator.pop(context); // pop the sidebar
               },
@@ -40,12 +40,12 @@ class MyDrawer extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 25.0),
             child: ListTile(
-              title: Text("SETTINGS"),
-              leading: Icon(Icons.settings),
+              title: const Text("SETTINGS"),
+              leading: const Icon(Icons.settings),
               onTap: () {
                 Navigator.pop(context);
 
-                Navigator.push(context, MaterialPageRoute(builder: (context) => SettingsPage(),),);
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const SettingsPage(),),);
               },
             ),
           ),
@@ -55,8 +55,8 @@ class MyDrawer extends StatelessWidget {
             Padding(
             padding: const EdgeInsets.only(left: 25.0, bottom: 25.0),
             child: ListTile(
-              title: Text("LOG OUT"),
-              leading: Icon(Icons.logout),
+              title: const Text("LOG OUT"),
+              leading: const Icon(Icons.logout),
               onTap: logout,
             ),
           )

@@ -10,12 +10,12 @@ class RegisterPage extends StatelessWidget {
   final TextEditingController _confirmPasswordController = TextEditingController();
 
   void register(BuildContext context) {
-    final _auth = AuthService();
+    final auth = AuthService();
 
     // password match create user
     if (_passwordController.text == _confirmPasswordController.text) {
       try {
-        _auth.signUpWithEmailAndPassword(_emailController.text, _passwordController.text);
+        auth.signUpWithEmailAndPassword(_emailController.text, _passwordController.text);
       } catch (e) {
         showDialog(context: context, builder: (context) => AlertDialog(
         title: Text(e.toString()),
