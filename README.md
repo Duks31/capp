@@ -3,7 +3,7 @@ _Readme still in progress_
 # Chat App
 
 ## Demo's
-| Demo 1 | Deom 2 | Demo 3 | Demo 4
+| Demo 1 | Demo 2 | Demo 3 | Demo 4
 |---------|---------|---------|-------|
 | ![Demo_1](lib/assets/demo_1.jpg) | ![Demo_2](/lib/assets/demo_2.jpg) | ![Demo_3](/lib/assets/demo_3.jpg) | ![Demo_4](/lib/assets/demo_4.jpg) |
 
