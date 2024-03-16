@@ -29,4 +29,3 @@ I am very much aware of the bugs in the app.You can also contribute to the proje
 ## Licences
 MIT License
 Copyright (c) 2024 Chidubem Ndukwe
-
