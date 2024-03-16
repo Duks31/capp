@@ -21,7 +21,7 @@ The Chat App is a user-friendly messaging application that allows you to connect
 
 ## Installation
 Installation is only available for android at the moment. Sorry for the inconvenience. :) 
-[click to download chat App](https://github.com/Duks31/capp/releases/download/latest/chat_app.apk)
+[View Releases](https://github.com/Duks31/capp/releases/tag/latest)
 
 ## Usage and Bugs
 I am very much aware of the bugs in the app.You can also contribute to the project by forking the project and making a pull request.  
