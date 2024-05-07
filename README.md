@@ -1,11 +1,9 @@
-_Readme still in progress_
-
 # Chat App
 
 ## Demo's
 | Demo 1 | Demo 2 | Demo 3 | Demo 4
 |---------|---------|---------|-------|
-| ![Demo_1](lib/assets/demo_1.jpg) | ![Demo_2](/lib/assets/demo_2.jpg) | ![Demo_3](/lib/assets/demo_3.jpg) | ![Demo_4](/lib/assets/demo_4.jpg) |
+| ![Demo_1](/lib/assets/demo_1.jpg) | ![Demo_2](/lib/assets/demo_2.jpg) | ![Demo_3](/lib/assets/demo_3.jpg) | ![Demo_4](/lib/assets/demo_4.jpg) |
 
 ## Description
 The Chat App is a user-friendly messaging application that allows you to connect and communicate with friends and family. It is a simple and easy-to-use app that allows you to send and receive messages. The Chat App is a great way to stay connected with the people you care about, no matter where they are in the world.
